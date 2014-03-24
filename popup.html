@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Heroes of the Storm Stream Browser</title>
+		<style type="text/css">
+			*{font-family: arial,sans-serif; font-weight: bold;}
+			body{
+				background: url("background.png") no-repeat 0 0;
+				background-size: 300px auto;
+			}
+			body, html, .loading{ 
+				margin: 0; padding: 0;
+				min-width: 300px; height: 400px;
+			}
+			.loading{
+				background: url("loading.gif") no-repeat 0 0;
+				background-size: 300px auto;
+			}
+			#ban{
+				font-size: 16px;
+				width: 100%;
+			}
+			#ban .border{
+				height: 2px;
+				background-color: #4f93b6;
+				background-image: -webkit-linear-gradient(left, #1d3f62,#3690b3,#1d3f62);
+			}
+			#search{
+				width: 200px;
+				height: 25px;
+				outline: none;
+				border: none;
+				-webkit-appearance: none;
+				background-color: transparent;
+				color: #4f93b6;
+			}
+			#refresh{
+				background: url("refresh.png") no-repeat 0 0;
+				background-position: center;
+				width: 25px;
+				height: 25px;
+				float: right;
+				cursor: pointer;
+			}
+			#panel{
+				margin-top: 2px;
+				height: 100%;
+				width: 100%;
+				overflow: auto;
+			}
+			#list{
+				width: 280px;
+				height: 100%;
+				font-size: 13px;
+				margin-left: 10px;
+			}
+			#list tr{
+				background-color: rgba(5,0,13,0.3);
+			}
+			#list tr:hover{
+				background-color: rgba(5,0,13,0.6);
+			}
+			#list tr td{
+				border-bottom: 2px solid #0f2e63;
+			}
+			.td-pic{
+				width: 85px;
+				height: 60px;
+			}
+			.td-pic div{
+				width: 80px;
+				height: 50px;
+				border-radius: 3px;
+				border: 1px solid #43286b;
+			}
+			.pic img{
+				vertical-align: middle;
+			}
+			.camera{
+				display: inline-block;
+				background: url("camera.png") no-repeat 0 0;
+				padding-left: 20px;
+				color: #4f93b6;
+			}
+			.camera a {text-decoration: none; color: #4f93b6;}
+			.viewer{
+				display: inline-block;
+				background: url("viewer.png") no-repeat 0 0;
+				padding-left: 20px;
+				color: #8eb1bc;
+			}
+			.bookmark{
+				display: inline-block;
+				width: 16px;
+				height: 16px;
+				background: url("bookmark-gray.png") no-repeat 0 0;
+			}
+			.bookmark.selected{
+				background: url("bookmark.png") no-repeat 0 0;
+			}
+			::-webkit-scrollbar {
+			    width: 10px;
+			    height: 13px;
+			}
+			::-webkit-scrollbar-track:horizontal{
+			    border-right: none;
+			    border-left: none;
+			}
+			::-webkit-scrollbar-track:vertical{
+			    border-bottom: none;
+			    border-top: none;
+			}
+			::-webkit-scrollbar-corner {
+			    width:0;
+			    height:0;
+			    border-top: none;
+			    border-left: none;
+			}
+			::-webkit-scrollbar-thumb {
+			    border-radius: 5px;
+			    min-height: 28px;
+			    border: 1px solid #4f93b6;
+			    background: -webkit-linear-gradient(left, #43286b, #43286b);
+			}
+
+			::-webkit-scrollbar-thumb:hover {
+			    background: -webkit-linear-gradient(left, #43286b, #43286b);
+			}
+
+			::-webkit-scrollbar-thumb:horizontal{
+			    background: -webkit-linear-gradient(top, #43286b, #43286b);
+			}
+
+			::-webkit-scrollbar-thumb:horizontal:hover{
+			    background: -webkit-linear-gradient(top, #43286b, #43286b);
+			}												
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+		<script type="text/javascript" src="popup.js"></script>
+	</head>
+	<body>
+		<div id="ban">
+			<input id="search" type="search" results=5 autosave="true" placeholder="Filter">
+			<span id="refresh"></span>
+			<div class="border"></div>
+		</div>
+		<div class="loading"></div>
+		<div id="panel" style="display:none;"><table id="list" cellspacing=0></table></div>
+	</body>
+</html>
