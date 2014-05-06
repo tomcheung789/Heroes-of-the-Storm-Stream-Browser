@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Heroes of the Storm Stream Browser",
-    "version": "0.1",
+    "version": "0.2",
     "description": "Heroes of the Storm (BlizzHeroes) Stream Browser",
     "permissions":["https://api.twitch.tv/"],
     "browser_action":{
